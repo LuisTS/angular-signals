@@ -1,0 +1,4 @@
+@let charactersLocal = characters();
+<section
+  class="characters d-flex flex-wrap justify-content-center align-items-center p-3 bg-light border border-dark rounded mt-3 mb-3" *ngIf="charactersLocal">
+  <pre>{{ charactersLocal | json }}</pre>

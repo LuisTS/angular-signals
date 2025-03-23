@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TestComponent } from "./components/test/test.component";
 import { TodoListComponent } from "./components/todo-list/todo-list.component";
+import { CharactersComponent } from "./components/characters/characters.component";
+import { CharactersImprovedComponent } from "./components/characters-improved/characters-improved.component";
 
 @Component({
   selector: 'app-root',
-  imports: [TestComponent, TodoListComponent],
+  imports: [TestComponent, TodoListComponent, CharactersComponent, CharactersImprovedComponent],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
