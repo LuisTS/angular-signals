@@ -8,7 +8,6 @@ import { catchError, of } from 'rxjs';
 export class CharactersImprovedService {
   state = signal({
     characters: new Map<number, CharacterImproved>(),
-    loading: true,
   });
 
   constructor() {
@@ -59,7 +58,7 @@ export class CharactersImprovedService {
         result.forEach((character) =>
           this.state().characters.set(character.id, character)
         );
-        this.state.set({ characters: this.state().characters, loading: false });
+        this.state.set({ characters: this.state().characters });
       });
   }
 
@@ -69,7 +68,7 @@ export class CharactersImprovedService {
     of(updatedCharacter).subscribe((result: CharacterImproved) => {
       this.state.update((state) => {
         state.characters.set(result.id, result);
-        return { characters: state.characters, loading: false };
+        return { characters: state.characters };
       });
     });
   }
