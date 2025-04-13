@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TestComponent } from './components/test/test.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { CharactersComponent } from './components/characters/characters.component';
@@ -10,6 +11,7 @@ import { NgIf } from '@angular/common';
   selector: 'app-root',
   imports: [
     NgIf,
+    RouterModule,
     TestComponent,
     TodoListComponent,
     CharactersComponent,

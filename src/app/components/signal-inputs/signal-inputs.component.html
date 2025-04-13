@@ -1,0 +1,11 @@
+Active: {{ isActive() ? 'Active' : 'Inactive' }}<br />
+(no modification)<br />
+<br>
+<app-child-singal-input
+  [firstName]="firstName"
+  [lastName]="lastName"
+  [currentDate]="currentDate"
+  [isActive]="isActive()"
+  (isActiveChange)="onChange($event)"
+/>
+
